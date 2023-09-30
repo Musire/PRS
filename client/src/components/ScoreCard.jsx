@@ -1,13 +1,9 @@
 import { useState } from "react";
+import useCounter from "../hooks/useCounter";
 
 const ScoreCard = () => {
-    const [count, setCount] = useState(0)
     const [open, setOpen] = useState(0)
-    
-
-    const increaseCount = () => {
-        setCount(count + 1)
-    }
+    const { count, increaseCount } = useCounter()
 
     const toggleOpen = () => {
         setOpen(prev => !prev)

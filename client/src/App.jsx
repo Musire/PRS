@@ -1,6 +1,8 @@
 import MainMenu from "./components/MainMenu"
 import ScoreCard from "./components/ScoreCard"
 
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
 
 export default function App() {
 
@@ -9,9 +11,10 @@ export default function App() {
   }
 
   return (
-    <div className="centered w-screen h-screen flex gap-x-20">
-      <MainMenu handleClick={handleClick} />
-      <ScoreCard />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path={'/'} element={<MainMenu />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
